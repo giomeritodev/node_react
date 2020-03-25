@@ -19,8 +19,7 @@ export default function Profile(){
 			headers: {
 				Authorization: ongId,
 			},
-		}).then(response => {
-			console.log(response.data.incidents);
+		}).then(response => {			
 			setIncidents(response.data.incidents);
 		})
 	}, [ongId]);
@@ -42,7 +41,7 @@ export default function Profile(){
 
 			<ul>
 				{incidents.map(incident => (
-					<li>
+					<li key={incident.id}>
 						<strong>CASO:</strong>
 						<p>{incident.title}</p>
 
@@ -50,7 +49,7 @@ export default function Profile(){
 						<p>{incident.description}</p>
 
 						<strong>VALOR:</strong>
-						<p>R$ {incident.value}</p>
+						<p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL' }).format(incident.value)}</p>
 
 						<button type="button">
 							<FiTrash2 size={20} color="#a8a8b3"/>
