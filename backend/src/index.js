@@ -1,4 +1,5 @@
 const express = require("express");
+const morgan = require("morgan");
 const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 3333;
@@ -10,6 +11,7 @@ const incidentsRouter = require("./routes/incidents_route");
 const profileRouter = require("./routes/profile_route");
 const sessionRouter = require("./routes/session_route");
 
+app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json());
 
