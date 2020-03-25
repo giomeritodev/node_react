@@ -1,11 +1,11 @@
 import React from 'react';
 import "./global.css"
-import Logon from './pages/Logon';
+import IndexRoutes from './routes/index_routes';
 
 function App() {
   
   return (
-    <Logon />
+    <IndexRoutes />
   );
 }
 
