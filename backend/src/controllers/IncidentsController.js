@@ -37,7 +37,7 @@ module.exports = {
 		return res.json({ id });
 	},
 
-	async delete(req, res){
+	async delete(req, res){		
 		const { id } = req.params;
 		const ong_id = req.headers.authorization;
 
