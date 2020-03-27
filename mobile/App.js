@@ -1,19 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Routes from './src/routes/index_router';
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello Word!</Text>
-    </View>
+	  <Routes />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
