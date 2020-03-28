@@ -9,8 +9,8 @@ import logoImg from './../../assets/logo.png';
 export default function Detail(){
 	const navigation = useNavigation();
 
-	function navigationToIncidents(){
-		navigation.navigate('Incidents');
+	function navigateBack(){
+		navigation.goBack();
 	}
 
 	return (
@@ -18,7 +18,7 @@ export default function Detail(){
 			<View style={styles.header}>
 				
 				<Image source={logoImg}/>
-				<TouchableOpacity onPress={navigationToIncidents}>
+				<TouchableOpacity onPress={navigateBack}>
 					<Feather name="arrow-left" size={28} color="#E02041"/>
 				</TouchableOpacity>				
 
