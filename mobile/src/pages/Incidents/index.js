@@ -12,8 +12,8 @@ export default function Incidents(){
 	const [incidents, setIncidents] = useState([]);
 	const [total, setTotal] = useState(0);
 
-	function navigationToDetail(){
-		navigation.navigate('Detail');
+	function navigationToDetail(incidents){
+		navigation.navigate('Detail', { incidents });
 	}
 
 	async function loadIncidents(){
@@ -47,7 +47,7 @@ export default function Incidents(){
 				showsVerticalScrollIndicator={false}
 				renderItem={({ item: incident }) => (
 					<View style={styles.incident}>
-						<Text style={styles.incidentProperty}>ONG:</Text>
+						<Text style={[styles.incidentProperty, { marginTop: 0 }]}>ONG:</Text>
 						<Text style={styles.incidentValue}>{incident.name}</Text>
 
 						<Text style={styles.incidentProperty}>CASO:</Text>
@@ -61,7 +61,7 @@ export default function Incidents(){
 								}).format(incident.value)}
 						</Text>
 
-						<TouchableOpacity style={styles.detailsButton} onPress={navigationToDetail}>
+						<TouchableOpacity style={styles.detailsButton} onPress={() => navigationToDetail(incident)}>
 							<Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
 							<Feather name="arrow-right" size={17} color="#E02041" />
 						</TouchableOpacity>	
