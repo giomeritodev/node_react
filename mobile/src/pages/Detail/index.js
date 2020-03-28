@@ -10,6 +10,7 @@ import logoImg from './../../assets/logo.png';
 export default function Detail(){
 	const navigation = useNavigation();
 	const message = 'Olá APAE, estou entrado em contato pois gostaria de ajudar no caso "Cachorro atropelado" com o valor de R$ 120,00';
+	const telefone = '7700000000';
 
 	function navigateBack(){
 		navigation.goBack();
@@ -24,7 +25,7 @@ export default function Detail(){
 	}
 
 	function sendWhatsapp(){
-		Linking.openURL(`whatsapp://send?phone=550000000000&text=${message}`);
+		Linking.openURL(`whatsapp://send?phone=55${telefone}&text=${message}`);
 	}
 
 	return (
